@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Select Filter">
+		<List items="{/UserProfileFilterData}" mode="SingleSelectLeft" includeItemInSelection="true" select="onGetFilterData">
+			<StandardListItem title="{value}" iconInset="true"/>
+		</List>
+		<buttons>
+			<Button id="confirmUserProfileSaveBtn" text="Confirm" visible="false" press="onPressSelectFilterName"/>
+			<Button text="Close" press="onPressUserProfileFilterClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

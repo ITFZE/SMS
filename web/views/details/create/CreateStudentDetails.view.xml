@@ -1,0 +1,147 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.create.CreateStudentDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page id="studentMasterDetails" title="{i18n>stdmStudentDetails}" showNavButton="true" navButtonPress="onBack">
+		<content>
+			<IconTabBar id="idIconTabBarNoIcons" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter text="Student Detail's" 	icon="sap-icon://study-leave"  class="sapUiLargeMarginEnd" 	>
+						<f:SimpleForm id="SimpleFormStudentDatails" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+				         labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+			              singleContainerFullSize="true">
+							<f:content>
+								<core:Title/>
+								<Label text="{i18n>stdmName}"/>
+								<Input id="txtInName" placeholder="{i18n>stdmPleaseName}" valueStateText="{i18n>stdmValuePleaseName}"/>
+								<Label text="{i18n>stdmEssNumber}"/>
+								<Input id="numInEssisNum" placeholder="{i18n>stdmPleaseEssisNum}" valueStateText="{i18n>stdmValuePleaseEssisNum}"/>
+								<Label text="{i18n>stdmRegistraionDate}"/>
+								<Input id="dateInRegistraion"  placeholder="{i18n>stdmPleaseRegitrationDate}" valueStateText="{i18n>stdmValueRegistraitonDate}"/>
+								<Label text="{i18n>stdmNationality}"/>
+								<ComboBox id="txtInNationality" valueStateText="{i18n>stdmValuePleaseNationality}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmResidentTelephone}"/>
+								<Input id="numInResidentTele"  placeholder="{i18n>stdmPleaseResidentTelephone}" valueStateText="{i18n>stdmValuePleaseResidentTele}"/>
+								<Label text="{i18n>stdmMobile}"/>
+								<Input id="numInMobile"  placeholder="{i18n>stdmPleaseMobile}" valueStateText="{i18n>stdmValuePleaseMobile}"/>
+								<Label text="{i18n>stdmSex}"/>
+								<Select id="selectSexType" valueStateText="{i18n>stdmValuePleaseSexType}">
+									<core:Item key="ProductId" text="Name" />
+								</Select>
+								<Label text="{i18n>stdmPreviousSchool}"/>
+								<Input id="txtInPreviousSchool"  placeholder="{i18n>stdmPleasePreviousSchool}" valueStateText="{i18n>stdmValuePleasePreviousSchool}"/>
+								<Label text="{i18n>stmPreviousClass}"/>
+								<ComboBox id="txtInPreviousClass" valueStateText="{i18n>stdmValuePreviousClass}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmCurrentClass}"/>
+								<ComboBox id="txtInCurrentClass" valueStateText="{i18n>stdmPleaseCurrentClass}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmCountry}"/>
+								<ComboBox id="txtInCountry" valueStateText="{i18n>stdmValuePleaseCountry}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{keyStatus}" />
+								</ComboBox>
+								<Label text="{i18n>stdmAccountSatatus}"/>
+								<Select id="selectInStatus" forceSelection="false" valueStateText="{i18n>stdmValuePleaseAccountType}"	selectedKey="{/ProductCollection/0/ProductId}"
+				            	items="{path: '/seasonState'}">
+									<core:Item key="{ProductId}" text="{selectTxt}" />
+								</Select>
+								<core:Title/>
+								<Label text="{i18n>stdmNameArabic}"/>
+								<Input id="txtInNameArabic"  placeholder="{i18n>stdmPleaseNameArabic}" valueStateText="{i18n>stdmValuePleaseNameArabic}"/>
+								<Label text="{i18n>stdmBirthDate}"/>
+								<DatePicker id="dateInBirthDate"
+								valueStateText="{i18n>stdmValuePleaseDate}"
+			                     displayFormat="short"
+		                    	change="handleChange"/>
+								<Label text="{i18n>stdmPaymentType}"/>
+								<ComboBox id="txtInPaymentType" valueStateText="{i18n>stdmValuePleasePayment}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmTrasportation}"/>
+								<ComboBox id="txtInTrasportation" valueStateText="{i18n>stdmValuePleaseTrasportation}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmModeofTrasport}"/>
+								<ComboBox id="txtInModeTransport" valueStateText="{i18n>stdmValuePleaseModeTrasport}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmArea}"/>
+								<ComboBox id="txtInArea" valueStateText="{i18n>stdmValuePleaseArea}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmStreetDescr}"/>
+								<ComboBox id="txtInStreetDescr" valueStateText="{i18n>stdmValuePleaseStreetDescr}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmBulidingName}"/>
+								<Input id="txtInBulidingName"  placeholder="{i18n>stdmPleaseBulidingName}" valueStateText="{i18n>stdmValuePleaseBulidingName}"/>
+							</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter text="Other Detail's" icon="sap-icon://add-contact" iconColor="red" class="sapUiLargeMarginBegin">
+						<f:SimpleForm id="SimpleFormOtherDetails" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+				         labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+			              singleContainerFullSize="true">
+							<f:content>
+								<core:Title/>
+								<Label text="{i18n>stdmAcCode}"/>
+								<Input id="idInAcCode"    placeholder="{i18n>stdmPleaseAcCode}" valueStateText="{i18n>stdmValuePleaseAcCode}" editable="false"/>
+								<Label text="{i18n>stdmParentGardianName}"/>
+								<Input id="idInParentGardianName"    placeholder="{i18n>stdmPleaseParentGardian}" valueStateText="{i18n>stdmValurPleaseParentGardian}" editable="false"/>
+								<Label text="{i18n>stdmAddressOne}"/>
+								<Input id="idInAddressOne"    placeholder="{i18n>stdmPleaseAddress}" valueStateText="{i18n>stdmValuePleaseAddress}" editable="false"/>
+								<Label text="{i18n>stdmPostBox}"/>
+								<Input id="idInPostBoxNum" placeholder="{i18n>stdmPleasePostBox}" valueStateText="{i18n>stdmValuePleasePostBox}" editable="false"/>
+								<Label text="{i18n>stdmFax}"/>
+								<Input id="idInFax"    placeholder="{i18n>stdmPleaseFax}" valueStateText="{i18n>stdmValuePleaseFax}"/>
+								<Label text="{i18n>stdmPreviousSection}"/>
+								<Input id="idInPreviousSection"  placeholder="{i18n>stdmPleasePreviousSection}" valueStateText="{i18n>stdmValuePleasePreviousSection}" editable="false"/>
+								<Label text="{i18n>stdmCompany}"/>
+								<Input id="idInCompany"  placeholder="{i18n>stdmPleaseCompany}" valueStateText="{i18n>stdmValueCompany}" editable="false"/>
+								<core:Title/>
+								<Label text="{i18n>stdmParentGardianNameArabic}"/>
+								<Input id="idInParentGardianNameArbic"  placeholder="{i18n>stdmPleaseParentGardianNameArabic}" valueStateText="{i18n>ParentGardianNameArabic}" editable="false"/>
+								<Label text="{i18n>stdmAddressTwo}"/>
+								<Input id="idInNameAddressTwo"  placeholder="{i18n>stdmPleaseAddressTwo}" valueStateText="{i18n>stdmValuePleaseAddressTwo}" editable="false"/>
+								<Label text="{i18n>stdmCity}"/>
+								<ComboBox id="idIncity" valueStateText="{i18n>stdmValuePleaseCity}"
+                				items="{path: '/CountriesCollection',sorter: { path: 'text' }}">
+									<core:Item key="{key}" text="{text}" />
+								</ComboBox>
+								<Label text="{i18n>stdmEmail}"/>
+								<Input id="idInEmail"  placeholder="{i18n>stdmPleaseEmail}" valueStateText="{i18n>stdmValuePleaseEmail}" />
+								<Label text="{i18n>stdmCurrentSection}"/>
+								<Input id="idInCurrentSection"  placeholder="{i18n>stdmPleaseCurrnetSection}" valueStateText="{i18n>stdmValuePleaseCurrentSection}" editable="false"/>
+							</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="saveStduentBtn" press="onPressSaveStudnetMasterBtn" icon="sap-icon://save"/>
+					<Button tooltip="" icon="sap-icon://sys-cancel-2" press="onPessStduentCancelBtn"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

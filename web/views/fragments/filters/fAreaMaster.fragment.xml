@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Select Filter">
+		<List items="{/areaMasterFilterData}" mode="SingleSelectLeft" includeItemInSelection="true" select="onGetAreaFilterData">
+			<StandardListItem title="{value}" iconInset="true"/>
+		</List>
+		<buttons>
+			<Button id="confirmAreaSaveBtn" text="Confirm" visible="false" press="onPressAreaSelectFilterName"/>
+			<Button text="Close" press="onPressAreaFilterClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

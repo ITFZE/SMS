@@ -1,0 +1,53 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.DiscountMasterDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page id="DiscountMasterdetails" title="{i18n>dm_DiscountMasterdetails}">
+		<content>
+			<l:Grid defaultSpan="L7 M12 S12" class="sapUiSmallMarginTop">
+				<l:content>
+					<f:SimpleForm id="SimpleFormClassDetails" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+						labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="true">
+						<f:content>
+							<Label  text="{i18n>dm_Code}"/>
+							<Input id  = "NumberDiscountCode" type = "Number"  value = "{/DiscountMasterDetails/0/Code}"   placeholder="{i18n>dm_PleaseEnterTheCode}" valueStateText= "{i18n>dm_PleaseEnterTheCode}" />
+							<Label  text="{i18n>dm_Description}"/>
+							<Input  id  = "TextDescription" type = "String"  value = "{/DiscountMasterDetails/0/Description}"   placeholder="{i18n>dm_PleaseEnterTheDescription}" valueStateText= "{i18n>dm_PleaseEnterTheDescription}"/>
+							<Label  text="{i18n>dm_DescriptionArabic}"/>
+							<Input  id  = "TextDescriptionArabic"  value = "{/DiscountMasterDetails/0/Description Arabic}" type = "Text"   textDirection="RTL" placeholder="{i18n>dm_PleaseEnterDescriptioninArabic}" valueStateText= "{i18n>dm_PleaseEnterDescriptioninArabic}"/>
+							<Label  text="{i18n>dm_DiscountPercentage}"/>
+							<Input  id  = "NumberDiscountPercentage" value = "{/DiscountMasterDetails/0/Discount Percentage}" type = "Number"    placeholder="{i18n>dm_PleaseEnterDiscountPercentage}" valueStateText= "{i18n>dm_PleaseEnterDiscountPercentage}" />
+							<Label  text="{i18n>dm_DiscountLimitAmount}"/>
+							<Input  id  = "NumberDiscountLimitAmt"  value = "{/DiscountMasterDetails/0/Discount Limit Amount}" type = "Number"   placeholder="{i18n>dm_PleaseEnterDiscountLimitAmount}" valueStateText= "{i18n>dm_PleaseEnterDiscountLimitAmount}" />
+							<Label  text="{i18n>dm_ClassCode}"/>
+							<Input  id  = "NumberClassCode" type = "Number" value = "{/DiscountMasterDetails/0/Class Code}"   placeholder="{i18n>dm_PleaseEntertheClassCode}" valueStateText= "{i18n>dm_PleaseEntertheClassCode}" />
+							</f:content>
+							<VBox >
+								<CheckBox text="Is Staff Child/Related to Staff" wrapping="true" width="350px">
+									<layoutData>
+										<l:GridData linebreak="true"
+						indentL="4"
+						indentM="4" />
+									</layoutData>
+								</CheckBox>
+							</VBox>
+						
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://save" tooltip = "Save" press="onSaveDicount"/>
+					<Button tooltip="Cancel" icon="sap-icon://sys-cancel-2" press="onCancelDiscount"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

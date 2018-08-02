@@ -1,0 +1,117 @@
+<core:View
+    controllerName="com.app.sms.controllers.details.create.ViewStudentDetails"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.uxap"
+	xmlns:l="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:c="sap.suite.ui.commons">
+	<m:Page id="viewStudentPage" showHeader="true" title="View Student Details" showNavButton="true" navButtonPress="onBack">
+		<m:content>
+			<ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="false" showTitleInHeaderContent="true"
+			showEditHeaderButton="true" editHeaderButtonPress="OnPressEditLead">
+				<headerTitle>
+					<ObjectPageHeader id="headerPageId" isActionAreaAlwaysVisible="true" 
+            				objectImageURI="sap-icon://customer"
+							objectTitle="{mLeadDetails>/CardName} {path: 'mLeadDetails>/U_SS_MEMBER_TYPE', formatter: '.childAdultFormatter'}"
+							objectImageShape="Circle"
+							objectImageAlt="{mLeadDetails>/CardName}"
+    						isObjectIconAlwaysVisible="false"
+							isObjectTitleAlwaysVisible="false"
+							isObjectSubtitleAlwaysVisible="false"
+							objectSubtitle=""/>
+				</headerTitle>
+				<headerContent>
+					<l:VerticalLayout>
+						<m:Link class="sapUiTinyMarginTop" text="{mLeadDetails>/Cellular}"/>
+						<m:Link class="sapUiTinyMarginTop" text="{mLeadDetails>/EmailAddress}"/>
+					</l:VerticalLayout>
+					<l:VerticalLayout>
+						<m:Label/>
+						<m:Label class="sapUiTinyMarginTop" text="{mLeadDetails>/U_School}"/>
+						<m:Label class="sapUiTinyMarginTop" text="{mLeadDetails>/U_Nationality}"/>
+					</l:VerticalLayout>
+				</headerContent>
+				<sections>
+					<ObjectPageSection id="personalInformation"   title="Personal Information">
+						<subSections>
+							<ObjectPageSubSection id="StepOne">
+								<blocks>
+									<l:VerticalLayout id="containerLayout" width="100%">
+										<l:BlockLayout>
+											<l:BlockLayoutRow id="personalInfoBRow" visible="false" accentCells="Accent1">
+												<l:BlockLayoutCell width="25%" id="blcFather" titleAlignment="Left" class="bg_color-viewAccountPage" title="Father Details">
+													<l:HorizontalLayout>
+														<core:Icon height="90px"
+                                                			src="sap-icon://family-protection" class="ViewAccount-Icon-Size ViewAccount-Page-IconSet"
+                                                			color="#1C4C98"></core:Icon>
+														<l:VerticalLayout class="css_paddingLeft_email">
+															<m:Text class="font-size-viewAccount-page" text="{mLeadDetails>/Father/CardName}"></m:Text>
+															<m:Link class="sapUiTinyMarginTop" text="{mLeadDetails>/Father/Cellular}"/>
+															<m:Link class="sapUiTinyMarginTop" text="{mLeadDetails>/Father/EmailAddress}" />
+															<m:Text class="sapUiTinyMarginTop" text="{mLeadDetails>/Father/U_Nationality}"></m:Text>
+														</l:VerticalLayout>
+													</l:HorizontalLayout>
+												</l:BlockLayoutCell>
+												<l:BlockLayoutCell width="25%" id="blcMother" titleAlignment="Left" titleLevel="h5" class="bg_color-viewAccountPage" title="Mother Details">
+													<l:HorizontalLayout >
+														<core:Icon height="90px"
+                                                			src="sap-icon://family-protection" class="ViewAccount-Icon-Size ViewAccount-Page-IconSet"
+                                                			color="#1C4C98"></core:Icon>
+														<l:VerticalLayout class="css_paddingLeft_email">
+															<m:Text class="font-size-viewAccount-page" text="{mLeadDetails>/Mother/CardName}"></m:Text>
+															<m:Link class="sapUiTinyMarginTop" text="{mLeadDetails>/Mother/Cellular}"/>
+															<m:Link  class="sapUiTinyMarginTop" text="{mLeadDetails>/Mother/EmailAddress}"/>
+															<m:Text  class="sapUiTinyMarginTop" text="{mLeadDetails>/Mother/U_Nationality}"></m:Text>
+														</l:VerticalLayout>
+													</l:HorizontalLayout>
+												</l:BlockLayoutCell>
+												<l:BlockLayoutCell width="25%" id="blcGuardian" titleAlignment="Left" class="bg_color-viewAccountPage" title="Guardian Details">
+													<l:HorizontalLayout >
+														<core:Icon height="90px"
+                                                			src="sap-icon://family-protection"  class="ViewAccount-Icon-Size ViewAccount-Page-IconSet"
+                                                			color="#1C4C98"></core:Icon>
+														<l:VerticalLayout class="css_paddingLeft_email">
+															<m:Text class="font-size-viewAccount-page" text="{mLeadDetails>/Guardian/CardName}"></m:Text>
+															<m:Link  class="sapUiTinyMarginTop" text="{mLeadDetails>/Guardian/Cellular}"/>
+															<m:Link  class="sapUiTinyMarginTop" text="{mLeadDetails>/Guardian/EmailAddress}"/>
+															<m:Text class="sapUiTinyMarginTop" text="{mLeadDetails>/Guardian/U_Nationality}"></m:Text>
+														</l:VerticalLayout>
+													</l:HorizontalLayout>
+												</l:BlockLayoutCell>
+											</l:BlockLayoutRow>
+										</l:BlockLayout>
+									</l:VerticalLayout>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+					<ObjectPageSection id="sportsObjectPage" title="Class Information">
+						<subSections>
+							<ObjectPageSubSection id="StepTwo">
+								<blocks>
+									<l:VerticalLayout id="sportsVerticalLayoaut" width="100%">
+										<m:Panel expandable="false" expanded="fasle" width="auto" class="sapUiResponsiveMargin"></m:Panel>
+									</l:VerticalLayout>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+					<ObjectPageSection id="OPLocations" title="Transport Information">
+						<subSections>
+							<ObjectPageSubSection id="StepFour">
+								<blocks>
+									<l:VerticalLayout id="vlLocations" width="100%">
+										<m:Panel expandable="false" expanded="fasle" width="auto" class="sapUiResponsiveMargin"></m:Panel>
+									</l:VerticalLayout>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+				</sections>
+			</ObjectPageLayout>
+		</m:content>
+	</m:Page>undefined
+
+</core:View>

@@ -1,0 +1,32 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.masters.DiscountMaster"
+	xmlns:html="http://www.w3.org/1999/xhtml" height="100%">
+	<Page title="Discount Master" showNavButton="true" navButtonPress="onNavBack">
+		<subHeader>
+			<Toolbar>
+				<SearchField id="searchDiscountMaster" placeholder="{i18n>dm_PleaseEnterTheCode}" search = "onSearchDiscount" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List id="ListDiscountMaster" items="{/DiscountMasterDetails}" growing="true" growingThreshold="10" busyIndicatorDelay="250"
+				enableBusyIndicator="true" noDataText="{i18n>No Items}">
+				<items>
+					<ObjectListItem title = "{i18n>dm_Code}:{Code}" type="Active" press="onPressDiscountMastersList" >
+						<attributes>
+							<ObjectAttribute text="{i18n>dm_Description}:{Description}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton tooltip="Filter" icon="sap-icon://add-filter" text="Add Filter" press="onPressAddFilter"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

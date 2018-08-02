@@ -1,0 +1,36 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.RouteMasterDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page id="RouteMasterdetails" title="{i18n>rm_RouteMasterdetails}">
+		<content>
+			<l:Grid defaultSpan="L7 M12 S12" class="sapUiSmallMarginTop">
+				<l:content>
+					<f:SimpleForm id="SimpleFormClassDetails" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+						labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="true">
+						<f:content>
+							<Label class="sapUiSmallMarginTop" text="{i18n>rm_RouteCode}"/>
+							<Input id  = "RouteCode" type = "Number"  value = "{/RouteMasterDetails/0/RouteCode}"   placeholder="{i18n>rm_PleaseEnterTheRouteCode}" valueStateText= "{i18n>rm_PleaseEnterTheRouteCode}" />
+							<Label class="sapUiSmallMarginTop" text="{i18n>rm_RouteName}"/>
+							<Input id  = "RouteName" type = "Text"  value = "{/RouteMasterDetails/0/RouteName}"  textDirection="RTL"  placeholder="{i18n>rm_PleaseEnterTheRouteName}" valueStateText= "{i18n>rm_PleaseEnterTheRouteName}"/>
+							</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://save" tooltip = "Save" press="onSaveRouteMaster"/>
+					<Button tooltip="Cancel" icon="sap-icon://sys-cancel-2" press="onCancelRouteMaster"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+	
+</mvc:View>

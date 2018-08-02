@@ -1,0 +1,32 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.masters.RouteMaster"
+	xmlns:html="http://www.w3.org/1999/xhtml" height="100%">
+	<Page title="Route Master" showNavButton="true" navButtonPress="onNavBack">
+		<subHeader>
+			<Toolbar>
+				<SearchField id="searchRouteMaster" placeholder="{i18n>rm_PleaseEnterTheRouteCode}" search = "onSearchRoute" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List id="ListRouteMaster" items="{/RouteMasterDetails}" growing="true" growingThreshold="10" busyIndicatorDelay="250"
+				enableBusyIndicator="true" noDataText="{i18n>No Items}">
+				<items>
+					<ObjectListItem title = "{i18n>rm_RouteCode}:{RouteCode}" type="Active" press="onPressRouteMastersList" >
+						<attributes>
+							<ObjectAttribute text="{i18n>rm_RouteName}:{RouteName}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton tooltip="Filter" icon="sap-icon://add-filter" text="Add Filter" press="onPressAddFilter"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

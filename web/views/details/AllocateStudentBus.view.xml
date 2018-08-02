@@ -1,0 +1,67 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.AllocateStudentBus"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page id="AllocateStudentBusdetails" title="{i18n>asb_AllocateStudentBus}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<l:Grid defaultSpan="L7 M12 S12" class="sapUiSmallMarginTop">
+				<l:content>
+					<f:SimpleForm id="SimpleFormClassDetails" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+						labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="true">
+						<f:content>
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_Year}"/>
+							<Select  id  = "Year"   selectedKey = "Select Year" change="handleSelectChange" class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEnterTheYear}" valueStateText= "{i18n>asb_PleaseEnterTheYear}" >
+							<core:Item key = "Select Year" text = "Select Year" />
+							<core:Item key="2017" text = "2017" />
+							<core:Item key = "2018" text = "2018" />
+							</Select>
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_BusNo}"/>
+							<Input  id  = "BusNumber" type = "Number"   class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEnterTheBusNumber}" valueStateText= "{i18n>asb_PleaseEnterTheBusNumber}"/>
+							<Button id = "searchButton" press = "onPressSearch" class="sapUiSmallMarginTop" icon = "sap-icon://open-command-field" tooltip = "search" />
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_BusType}"/>
+							<RadioButtonGroup columns="2" selectedIndex="2" class="sapUiMediumMarginBottom">
+				<buttons>
+					<RadioButton id="own" text="Own" editable = "false" />
+					<RadioButton id="hired" text="Hired" editable = "false" />
+				</buttons>
+			</RadioButtonGroup>
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_VehicleType}" />
+							<Input  id  = "VehicleType" value = "{/AllocateStudentBusDetails/0/VehicleType}" editable = "false" class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEnterTheVehicleType}" valueStateText= "{i18n>asb_PleaseEnterTheVehicleType}" />
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_NoofSeats}"/>
+							<Input  id  = "NoOfSeats"  value = "{/AllocateStudentBusDetails/0/NoOfSeats}" editable = "false"  class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEnterNoOfSeats}" valueStateText= "{i18n>asb_PleaseEnterNoOfSeats}" />
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_Route}"/>
+							<Select  id  = "Route" 	change="handleSelectChange" selectedKey = "Select Description in Arabic" textDirection="RTL" class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEntertheRoute}" valueStateText= "{i18n>asb_PleaseEntertheRoute}" >
+							<items>
+							<core:Item key = "Select Description in Arabic" text = "Select Description in Arabic" />
+							<core:Item key="المرور من المشرف " text = "المرور من المشرف " />
+						    <core:Item key="المرور من ف " text = "المرور منمرور م" />
+							</items>
+							</Select>
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_Driver}" />
+							<Input  id  = "Driver" value = "{/AllocateStudentBusDetails/0/Driver}" editable = "false" class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEnterTheDriver}" valueStateText= "{i18n>asb_PleaseEnterTheDriver}" />
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_DriverName}" />
+							<Input  id  = "DriverName" value = "{/AllocateStudentBusDetails/0/DriverName}" editable = "false" class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEnterTheDriverName}" valueStateText= "{i18n>asb_PleaseEnterTheDriverName}" />
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_Supervisor}" />
+							<Input  id  = "Supervisor" value = "{/AllocateStudentBusDetails/0/Supervisor}" editable = "false" class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEnterTheSupervisor}" valueStateText= "{i18n>asb_PleaseEnterTheSupervisor}" />
+							<Label class="sapUiSmallMarginTop" text="{i18n>asb_SupervisorName}" />
+							<Input  id  = "SupervisorName" value = "{/AllocateStudentBusDetails/0/SupervisorName}" editable = "false" class="sapUiSmallMarginTop"  placeholder="{i18n>asb_PleaseEnterTheSupervisorName}" valueStateText= "{i18n>asb_PleaseEnterTheSupervisorName}" />
+							</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://save" tooltip = "Save" press="onSaveASB"/>
+					<Button tooltip="Cancel" icon="sap-icon://sys-cancel-2" press="onCancelASB"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

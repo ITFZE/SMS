@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Select Filter">
+		<List items="{/DiscountMasterFilterData}" mode="SingleSelectLeft" includeItemInSelection="true" select="onGetFilterData">
+			<StandardListItem title = "{value}" iconInset="true" />
+		</List>
+		<buttons>
+			<Button id="confirmDiscountSaveBtn" text="Confirm" visible="false" press="onPressSelectFilterName"/>
+			<Button text="Close" press="onPressDiscountFilterClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

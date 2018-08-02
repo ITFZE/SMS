@@ -1,0 +1,34 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.masters.StreetMaster"
+	xmlns:html="http://www.w3.org/1999/xhtml" height="100%">
+	<Page title="{i18n>smStreetMaster}" showNavButton="true" navButtonPress="onBackDashBoard">
+		<subHeader>
+			<Toolbar>
+				<SearchField id="searchStreetMaster" placeholder="{i18n>smPleaseEnterStreetCode}"
+					search="" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List id="listStreetMaster" items="{/streetMasterData}" growing="true" growingThreshold="10" busyIndicatorDelay="250"
+				enableBusyIndicator="true" noDataText="{i18n>smNoItems}">
+				<items>
+					<ObjectListItem title="{i18n>smStreetCode}: {streetCode}" type="Active" press="onPressStreetMasterList" >
+						<attributes>
+							<ObjectAttribute text="{i18n>smStreetDesc}: {streetDescr}"/>
+							<ObjectAttribute text="{i18n>smStreetDescArbic}: {streetDescrArabic}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton tooltip="Filter" icon="sap-icon://add-filter" press="onPressStreetFilterOpen"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

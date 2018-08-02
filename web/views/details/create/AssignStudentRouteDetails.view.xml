@@ -1,0 +1,97 @@
+<core:View
+  controllerName="com.app.sms.controllers.details.create.AssignStudentRouteDetails"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.uxap"
+	xmlns:l="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:unified="sap.ui.unified"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	xmlns:c="sap.suite.ui.commons">
+	<m:Page showNavButton="true" navButtonPress="onBackAssignStudentRoute" id="createAssessmentPAGE" showHeader="true" title="Assign Student Route">
+		<m:content>
+			<ObjectPageLayout id="createAssessmentObjectPageLayout" showTitleInHeaderContent="true">
+				<headerTitle>
+					<ObjectPageHeader isActionAreaAlwaysVisible="true" 
+            				objectImageURI="sap-icon://customer"
+							objectTitle="Gopi.A"
+							objectImageShape="Circle"
+							objectImageAlt="Gopi"
+    						isObjectIconAlwaysVisible="false"
+							isObjectTitleAlwaysVisible="false"
+							isObjectSubtitleAlwaysVisible="false"
+							objectSubtitle=""/>
+				</headerTitle>
+				<headerContent>
+					<l:VerticalLayout>
+						<m:Link class="sapUiTinyMarginTop" text="76787"/>
+					</l:VerticalLayout>
+					<!--	<l:VerticalLayout><m:Label/><m:Label class="sapUiTinyMarginTop" text="BAIMS"/><m:Label class="sapUiTinyMarginTop" text="Indian"/></l:VerticalLayout> -->
+				</headerContent>
+				<sections>
+					<ObjectPageSection class="create-Assessment-Page-TopMargin">
+						<subSections>
+							<ObjectPageSubSection>
+								<blocks>
+									<m:Panel id="panelStudentSeacrh" width="auto">
+										<m:Table id="stdSearchTable" class="width-full bg-color-table" 
+                            				growing="true" growingThreshold="10" inset="false" 
+                            				selectionMode="single">
+											<m:headerToolbar>
+												<m:Toolbar>
+													<m:content>
+														<m:Title id="txtMember" text="{i18n>stdmStudentDetail}" />
+													</m:content>
+												</m:Toolbar>
+											</m:headerToolbar>
+											<m:columns>
+												<m:Column>
+													<m:Text text="{i18n>stdmStudentCode}"/>
+												</m:Column>
+												<m:Column>
+													<m:Text text="{i18n>stdmStudentName}"/>
+												</m:Column>
+												<m:Column  minScreenWidth="Tablet" demandPopin="true">
+													<m:Text text="{i18n>Relation}"/>
+												</m:Column>
+												<m:Column  minScreenWidth="Tablet" demandPopin="true">
+													<m:Text text="{i18n>Class}"/>
+												</m:Column>
+												<m:Column  minScreenWidth="Tablet" demandPopin="true">
+													<m:Text text="{i18n>Year}"/>
+												</m:Column>
+												<m:Column  minScreenWidth="Tablet" demandPopin="true">
+													<m:Text text="{i18n>Route}"/>
+												</m:Column>
+											</m:columns>
+											<m:items>
+												<m:ColumnListItem>
+													<m:cells>
+														<m:Text text="76787 "/>
+														<m:Text text="Gopi A"/>
+														<m:Text text="Sister"/>
+														<m:Text text="12 GRADE TWELVE (BOYS)"/>
+														<m:ComboBox value="Year"/>
+														<m:ComboBox value="Route"/>
+													</m:cells>
+												</m:ColumnListItem>
+											</m:items>
+										</m:Table>
+									</m:Panel>
+								</blocks>
+							</ObjectPageSubSection>
+						</subSections>
+					</ObjectPageSection>
+				</sections>
+			</ObjectPageLayout>
+		</m:content>
+		<m:footer>
+			<m:Bar>
+				<m:contentRight>
+					<m:Button tooltip="Save" icon="sap-icon://save" press="handleSaveCreateAssementPress"/>
+					<m:Button tooltip="Cancel" icon="sap-icon://sys-cancel-2" press="handleCancelCreateAssementPress"/>
+				</m:contentRight>
+			</m:Bar>
+		</m:footer>
+	</m:Page>
+</core:View>

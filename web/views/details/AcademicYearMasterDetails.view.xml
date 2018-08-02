@@ -1,0 +1,43 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.AcademicYearMasterDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page title="{i18n>aymAcademicYearMasterDetails}">
+		<content>
+			<l:Grid defaultSpan="L7 M12 S12" class="sapUiSmallMarginTop">
+				<l:content>
+					<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="true">
+						<f:content>
+							<Label text="{i18n>aymYear}"/>
+							<Input  id="txtYear" type="Number" placeholder="{i18n>aymPleaseEnterTheYear}" valueStateText="{i18n>aymValuePleaseEnterYear}"/>
+							<Label text="{i18n>aymStartDate}"/>
+							<DatePicker id="dateStartDate" valueFormat="MM/dd/yy" displayFormat="short" valueStateText="{i18n>aymValuePleaseEnterStartDate}" placeholder="{i18n>aymPleaseSelectTheStartDateAndTime}"/>
+							<Label text="{i18n>aymEndDate}"/>
+							<DatePicker id="dateEndDate" valueFormat="MM/dd/yy" displayFormat="short" valueStateText="{i18n>aymValuePleaseEnterEndDate}" placeholder="{i18n>aymPleaseSelectTheEndtDateAndTime}"/>
+							<Label text="{i18n>aymStatus}"/>
+							<Select id="idStatus" items="{path:'BaseModel>/seasonState'}">
+								<items>
+									<core:Item text="{BaseModel>selectTxt}" key="{BaseModel>keyStatus}"/>
+								</items>
+							</Select>
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://save" press="onPressSaveAcademicBtn"/>
+					<Button tooltip="" icon="sap-icon://sys-cancel-2" press="onPressCancelAcademicBtn"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

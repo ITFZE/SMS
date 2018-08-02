@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Select Filter">
+		<List items="{/RouteMasterFilterData}" mode="SingleSelectLeft" includeItemInSelection="true" select="onGetFilterData">
+			<StandardListItem title = "{value}" iconInset="true" />
+		</List>
+		<buttons>
+			<Button id="confirmRouteSaveBtn" text="Confirm" visible="false" press="onPressSelectFilterName"/>
+			<Button text="Close" press="onPressRouteFilterClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,13 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Select Filter">
+		<List items="{/busMasterFilterData}" mode="SingleSelectLeft" includeItemInSelection="true" select="onGetBusFilterData">
+			<StandardListItem title="{value}" iconInset="true"/>
+		</List>
+		<buttons>
+			<Button id="confirmBusSaveBtn" text="Confirm" visible="false" press="onPressBusSelectFilterName"/>
+			<Button text="Close" press="onPressBusFilterClose"/>
+		</buttons>
+	</Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+		<meta http-equiv="cache-control" content="no-cache" />
+		<title>BAIMS</title>
+		<link href="images/bin-logo.png" rel="schoolManagement icon" type="image/x-icon" />
+
+		<script id="sap-ui-bootstrap"
+		src="https://sapui5.hana.ondemand.com/1.56.5/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_belize"
+			data-sap-ui-language="en"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-preload="auto"
+			data-sap-ui-resourceroots='{"com.app.sms": "./"}'>
+		</script>
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "com.app.sms",
+						propagateModel: true
+					}),
+					appWidthLimited: false
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+	<body class="sapUiBody" role="application" id="content">
+	</body>
+</html>

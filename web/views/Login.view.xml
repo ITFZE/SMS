@@ -1,0 +1,29 @@
+<mvc:View
+	xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core" controllerName="com.app.sms.controllers.Login"
+	xmlns:html="http://www.w3.org/1999/xhtml" displayBlock="true"
+	xmlns:css="./css/style">
+	<Page showHeader="false" class="page-backgroundImage">
+		<l:VerticalLayout id="containerLayout" width="100%">
+			<l:BlockLayout id="partentBlockLayout">
+				<l:BlockLayoutRow >
+					<l:BlockLayoutCell></l:BlockLayoutCell>
+					<l:BlockLayoutCell class="css-Form-bg">
+						<Image class="css-img-Logo sapUiTinyMarginBottom" src="./images/bin-logo.png" />
+						<Text class="cssTxtColor css-font-size sapUiTinyMarginBottom" text="{i18n>BinAweidhaInformationManagementSystem}"/>
+						<Label class="cssTxtColor" text="{i18n>loginUsername}" />
+						<Input id="val_Username" width="100%" class="sapUiTinyMarginBottom" placeholder="{i18n>loginPleaseEnterTheUsername}" 
+						valueStateText="{i18n>loginPleaseenteravalidusername}" />
+						<Label class="cssTxtColor" text="{i18n>loginPassword}" />
+						<Input id="pwd_Password" class="sapUiSmallMarginBottom" width="100%" type="Password" 
+						    placeholder="{i18n>loginPleaseEnterThePassword}" valueStateText="{i18n>loginPleaseenteravalidpassword}" />
+						<Button id="loginBtn" width="100%" text="{i18n>Login}" press="onSubmit"></Button>
+					</l:BlockLayoutCell>
+					<l:BlockLayoutCell></l:BlockLayoutCell>
+				</l:BlockLayoutRow >
+			</l:BlockLayout>
+		</l:VerticalLayout>
+	</Page>
+</mvc:View>

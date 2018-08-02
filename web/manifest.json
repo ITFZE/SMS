@@ -1,0 +1,285 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "com.app.sms",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.app.sms.views.AppView",
+			"type": "XML"
+		},
+		"handleValidation": true,
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {
+
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.app.sms.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.app.sms.views",
+				"controlId": "idAppControl",
+				"clearTarget": "true",
+				"controlAggregation": "pages",
+				"transition": "side"
+			},
+			"routes": [{
+					"pattern": "",
+					"name": "Login",
+					"target": "Login"
+			}, {
+					"pattern": "DashBoard",
+					"name": "DashBoard",
+					"target": "DashBoard"
+			}, {
+					"pattern": "ClassMaster",
+					"name": "ClassMaster",
+					"target": ["ClassMasterDetails", "ClassMaster"],
+					"viewLevel": 3
+			}, {
+					"pattern": "EditClassMaster/{PageID}",
+					"name": "EditClassMaster",
+					"target": ["ClassMasterDetails", "ClassMaster"]
+			},
+				{
+					"name": "AcademicYearMaster",
+					"pattern": "AcademicYearMaster",
+					"target": ["AcademicYearMasterDetails", "AcademicYearMaster"],
+					"viewLevel": 4
+			},
+				{
+					"pattern": "DiscountMaster",
+					"name": "DiscountMaster",
+					"target": ["DiscountMasterDetails", "DiscountMaster"],
+					"viewLevel": 5
+				}, {
+					"pattern": "AreaMaster",
+					"name": "AreaMaster",
+					"target": ["AreaMasterDetails", "AreaMaster"],
+					"viewLevel": 6
+				},
+				{
+					"pattern": "StreetMaster",
+					"name": "StreetMaster",
+					"target": ["StreetMasterDetails", "StreetMaster"],
+					"viewLevel": 7
+				}, {
+					"pattern": "BusMaster",
+					"name": "BusMaster",
+					"target": ["BusMasterDetails", "BusMaster"],
+					"viewLevel": 8
+				},
+				{
+					"pattern": "RouteMaster",
+					"name": "RouteMaster",
+					"target": ["RouteMasterDetails", "RouteMaster"],
+					"viewLevel": 9
+				},
+				{
+					"pattern": "AssignBusRoute",
+					"name": "AssignBusRoute",
+					"target": ["AssignBusRouteDetails"],
+					"viewLevel": 10
+				},
+				{
+					"pattern": "AllocateStudentBus",
+					"name": "AllocateStudentBus",
+					"target": ["AllocateStudentBus"],
+					"viewLevel": 11
+				},
+				{
+					"pattern": "UserProfile",
+					"name": "UserProfile",
+					"target": ["UserProfileDetails"],
+					"viewLevel": 12
+				}, {
+					"pattern": "SearchStudentMaster",
+					"name": "SearchStudentMaster",
+					"target": "SearchStudentMaster",
+					"viewLevel": 13
+				}, {
+					"pattern": "ViewStudentDetails/{PageID}",
+					"name": "ViewStudentDetails",
+					"target": "ViewStudentDetails",
+					"viewLevel": 14
+				},
+				 {
+					"pattern": "CreateStudentDetails",
+					"name": "CreateStudentDetails",
+					"target": "CreateStudentDetails",
+					"viewLevel": 15
+				},
+				{
+					"pattern": "SearchAssignStudentRoute",
+					"name": "SearchAssignStudentRoute",
+					"target": "SearchAssignStudentRoute",
+					"viewLevel": 16
+				},
+				{
+					"pattern": "AssignStudentRouteDetails",
+					"name": "AssignStudentRouteDetails",
+					"target": "AssignStudentRouteDetails",
+					"viewLevel": 17
+				}
+				],
+			"targets": {
+				"splitMasterAndDetail": {
+					"viewName": "SplitMasterAndDetail"
+				},
+				"Login": {
+					"viewName": "Login",
+					"viewLevel": 1
+				},
+				"DashBoard": {
+					"viewName": "DashBoard",
+					"viewLevel": 2
+				},
+				"ClassMaster": {
+					"viewName": "masters.ClassMaster",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "masterPages"
+				},
+				"ClassMasterDetails": {
+					"viewName": "details.ClassMasterDetails",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "detailPages"
+				},
+				"AcademicYearMaster": {
+					"viewName": "masters.AcademicYearMaster",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "masterPages"
+				},
+				"AcademicYearMasterDetails": {
+					"viewName": "details.AcademicYearMasterDetails",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "detailPages"
+				},
+				"DiscountMaster": {
+					"viewName": "masters.DiscountMaster",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "masterPages"
+				},
+				"DiscountMasterDetails": {
+					"viewName": "details.DiscountMasterDetails",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "detailPages"
+				},
+				"RouteMaster": {
+					"viewName": "masters.RouteMaster",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "masterPages"
+				},
+				"RouteMasterDetails": {
+					"viewName": "details.RouteMasterDetails",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "detailPages"
+				},
+				"AreaMaster": {
+					"viewName": "masters.AreaMaster",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "masterPages"
+				},
+				"AreaMasterDetails": {
+					"viewName": "details.AreaMasterDetails",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "detailPages"
+				},
+				"StreetMaster": {
+					"viewName": "masters.StreetMaster",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "masterPages"
+				},
+				"StreetMasterDetails": {
+					"viewName": "details.StreetMasterDetails",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "detailPages"
+				},
+				"BusMaster": {
+					"viewName": "masters.BusMaster",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "masterPages"
+				},
+				"BusMasterDetails": {
+					"viewName": "details.BusMasterDetails",
+					"parent": "splitMasterAndDetail",
+					"controlId": "splitContainerControl",
+					"controlAggregation": "detailPages"
+				},
+				"AssignBusRouteDetails": {
+					"viewName": "details.AssignBusRouteDetails"
+				},
+				"AllocateStudentBus": {
+					"viewName": "details.AllocateStudentBus"
+				},
+
+				"UserProfileDetails": {
+					"viewName": "details.UserProfileDetails"
+				},
+				"SearchStudentMaster": {
+					"viewName": "masters.SearchStudentMaster"
+				},
+				"ViewStudentDetails": {
+					"viewName": "details.create.ViewStudentDetails"
+				},
+				"CreateStudentDetails": {
+					"viewName": "details.create.CreateStudentDetails"
+				},
+			    "SearchAssignStudentRoute": {
+					"viewName": "masters.SearchAssignStudentRoute"
+				},
+			    "AssignStudentRouteDetails": {
+					"viewName": "details.create.AssignStudentRouteDetails"
+				}
+			},
+			"resources": {
+				"css": [{
+					"uri": "css/styles.css"
+			}]
+			}
+		}
+	}
+}

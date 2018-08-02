@@ -1,0 +1,43 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.UserProfileDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page id="UserProfileDetails" title="{i18n>up_UserProfileDetails}" showNavButton="true" navButtonPress="onNavBack">
+		<content>
+			<l:Grid defaultSpan="L7 M12 S12" class="sapUiSmallMarginTop">
+				<l:content>
+					<f:SimpleForm id="SimpleFormStreetMasterDetails" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+						labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="true">
+						<f:content>
+							<Label  text="{i18n>up_UserCode}"/>
+							<Input id="TextUserCode" type="Text" editable = "false" value="{/UserProfileDetails/0/UserCode}" placeholder="{i18n>up_PleaseEnterUserCode}" valueStateText="{i18n>up_PleaseEnterUserCode}"/>
+							<Label class="sapUiTinyMarginTop" text="{i18n>up_UserFullName}"/>
+							<Input id="TextUserFullName" class="sapUiTinyMarginTop" value="{/UserProfileDetails/0/UserFullName}"  placeholder="{i18n>up_PleaseEnterUserFullName}" valueStateText="{i18n>up_PleaseEnterUserFullName}"/>
+							<Label class="sapUiTinyMarginTop" text="{i18n>up_UserShortName}"/>
+							<Input  id="TextUserShortName" class="sapUiTinyMarginTop" value="{/UserProfileDetails/0/UserShortName}"  placeholder="{i18n>up_PleaseEnterUserShortName}" valueStateText="{i18n>up_PleaseEnterUserShortName}" />
+						    <Label text="{i18n>up_Password}"/>
+							<Input id="NumberPassword" type="Password"  placeholder="{i18n>up_PleaseEnterThePassword}" valueStateText="{i18n>up_PleaseEnterThePassword}"/>
+					     	<Label text="{i18n>up_ConfirmPassword}"/>
+							<Input id="NumberConfirmPassword" type="Password"  placeholder="{i18n>up_PleaseConfirmThePassword}" valueStateText="{i18n>up_PleaseConfirmThePassword}"/>
+					    	<Label text="{i18n>up_Email}"/>
+							<Input id="Email" type="Email"  placeholder="{i18n>up_PleaseEnterTheEmail}" valueStateText="{i18n>up_PleaseEnterTheEmail}"/>
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button id="saveStreetBtn" press="onPressSaveUserProfileBtn" icon="sap-icon://save"/>
+					<Button tooltip="" icon="sap-icon://sys-cancel-2" press="onPessUserProfileCancelBtn"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

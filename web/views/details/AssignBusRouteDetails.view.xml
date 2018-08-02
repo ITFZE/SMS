@@ -1,0 +1,54 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.AssignBusRouteDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page title="{i18n>abrAssignBusRouteDetails}" showNavButton="true" navButtonPress="onBackAssignBusRoute">
+		<content>
+			<l:Grid defaultSpan="L8 M12 S12" class="sapUiSmallMarginTop">
+				<l:content>
+					<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="true">
+						<f:content>
+							<Label text="{i18n>abrYear}" class="sapUiTinyMarginTop"/>
+							<ComboBox id="noYear" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseentertheyear}" placeholder="{i18n>abrPleaseEnterTheYear}"/>
+							<Label text="{i18n>abrBusNo}" class="sapUiTinyMarginTop"/>
+							<Input id="noBusNo" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseenterbusno}" placeholder="{i18n>abrPleaseEnterTheBusNo}"/>
+							<Button class="sapUiTinyMarginTop" icon = "sap-icon://open-command-field"/>
+							<Label text="{i18n>abrBusType}" class="sapUiTinyMarginTop"/>
+							<ComboBox  id="typeBusType" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseenterbustype}" placeholder="{i18n>abrPleaseEnterBusType}"/>
+							<Label text="{i18n>abrVehType}" class="sapUiTinyMarginTop"/>
+							<Input id="typeVeh" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseentervehtype}" placeholder="{i18n>abrPleaseEnterTheVehType}"/>
+							<Label text="{i18n>abrNoOfSeats}" class="sapUiTinyMarginTop"/>
+							<Input id="noSeats" type="Number" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseenternoofseats}" placeholder="{i18n>abrPleaseEnterTheNoOfSeats}"/>
+							<Label text="{i18n>abrRoute}" class="sapUiTinyMarginTop"/>
+							<ComboBox id="txtRoute" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseenterroute}" placeholder="{i18n>abrPleaseEnterTheRoute}"/>
+							<Label text="{i18n>abrDriver}" class="sapUiTinyMarginTop"/>
+							<Input id="txtDriver" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseenterdriver}" placeholder="{i18n>abrPleaseEnterTheDriver}"/>
+							<Label text="{i18n>abrSupervisor}" class="sapUiTinyMarginTop"/>
+							<Input id="txtSupervisor" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseentersupervisor}" placeholder="{i18n>abrPleaseEnterTheSupervisor}"/>
+							<Label text="{i18n>abrDriverName}" class="sapUiTinyMarginTop"/>
+							<Input id="txtDriverArabicName" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseenterdrivername}" placeholder="{i18n>abrPleaseEnterTheDriverName}" textDirection="RTL"/>
+							<Input id="txtDriverName" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseenterdrivername}" placeholder="{i18n>abrPleaseEnterTheDriverName}"/>
+							<Label text="{i18n>abrSupervisorName}" class="sapUiTinyMarginTop"/>
+							<Input id="txtSupervisorArabicName" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseentersupervisorname}" placeholder="{i18n>abrPleaseEnterTheSupervisorName}" textDirection="RTL"/>
+							<Input id="txtSupervisorName" class="sapUiTinyMarginTop" valueStateText="{i18n>abrPleaseentersupervisorname}" placeholder="{i18n>abrPleaseEnterTheSupervisorName}"/>
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://save" press="onPressAssignBusRouteSave"/>
+					<Button tooltip="Cancel" icon="sap-icon://sys-cancel-2" press="onPressAssignBusRouteCancel"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

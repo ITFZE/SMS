@@ -1,0 +1,36 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.masters.AreaMaster"
+	xmlns:html="http://www.w3.org/1999/xhtml" height="100%">
+	<Page title="{i18n>amAreaMaster}" showNavButton="true" navButtonPress="onBackArea">
+		<subHeader>
+			<Toolbar>
+				<SearchField id="onSearchAreaMaster" placeholder="{i18n>amPleaseEnterTheArea}"
+					search="" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List  items="{/areaMaster}" growing="true" growingThreshold="10" busyIndicatorDelay="250"
+				enableBusyIndicator="true" noDataText="{i18n>amNoItems}">
+				<items>
+					<ObjectListItem title="{i18n>amAreaCode}: {areaCode}" type="Active" press="" >
+						<attributes>
+							<ObjectAttribute text="{i18n>amAreaDescription}: {areaDescription}"/>
+						</attributes>
+						<secondStatus>
+							<ObjectStatus />
+						</secondStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton tooltip="Filter" icon="sap-icon://add-filter" press="onPressAreaFilter"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

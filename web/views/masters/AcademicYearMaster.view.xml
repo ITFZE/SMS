@@ -1,0 +1,38 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.masters.AcademicYearMaster"
+	xmlns:html="http://www.w3.org/1999/xhtml" height="100%">
+	<Page title="{i18n>aymAcadamicYearMaster}" showNavButton="true" navButtonPress="onBackAcademic">
+		<subHeader>
+			<Toolbar>
+				<SearchField id="onSearchAcademic" placeholder="{i18n>aymPleaseEnterTheAcademicYear}"
+					search="onSearch" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List items="{/academicYearMaster}" growing="true" growingThreshold="10" busyIndicatorDelay="250"
+				enableBusyIndicator="true" noDataText="{i18n>aymNoItems}">
+				<items>
+					<ObjectListItem title="{i18n>aymYear}: {year}" type="Active" press="" >
+						<attributes>
+							<ObjectAttribute text="{i18n>aymStartDate}: {startDate}"/>
+							<ObjectAttribute/>
+							<ObjectAttribute text="{i18n>aymEndDate}: {endDate}"/>
+						</attributes>
+						<secondStatus>
+							<ObjectStatus />
+						</secondStatus>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton tooltip="Filter" icon="sap-icon://add-filter" press="onPressAcademicFilterOpen"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

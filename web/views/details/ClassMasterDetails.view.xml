@@ -1,0 +1,37 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.ClassMasterDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page id="classMasterDetails" title="{i18n>cmClassDetails}">
+		<content>
+			<l:Grid defaultSpan="L7 M12 S12" class="sapUiSmallMarginTop">
+				<l:content>
+					<f:SimpleForm id="SimpleFormClassDetails" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12"
+						adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+						singleContainerFullSize="true">
+						<f:content>
+							<Label text="{i18n>cmClassCode}"/>
+							<Input  value="{/classMasterData/0/classCode}" id="numClassCode" type="Number"  placeholder="{i18n>cmPleaseEnterClassCode}" valueStateText="{i18n>cmValuePleaseEnterClassCode}"/>
+							<Label class="sapUiTinyMarginTop" text="{i18n>cmDescription}"/>
+							<Input   value="{/classMasterData/0/className}" id="txtClassDescr"  placeholder="{i18n>cmPleaseEnterDescription}" valueStateText="{i18n>cmValuePleaseEnterDescription}"/>
+							<Label class="sapUiTinyMarginTop" text="{i18n>cmDescriptionArabic}"/>
+							<Input  value="{/classMasterData/0/descrpitionArbic}" id="txtClassArbicDescr" placeholder="{i18n>cmPleaseEnterDescriptionArabic}" valueStateText="{i18n>cmValuePleaseEnterDescriptionArabic}" textDirection="RTL"/>
+						</f:content>
+					</f:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button  tooltip="save" visible="true" id="saveCreateClasssBtn" press="onPressSaveClassBtn" icon="sap-icon://save"/>
+					<Button tooltip="cancel" visible="true" id="cancelCreateClasssBtn" icon="sap-icon://sys-cancel-2" press="onPessClassCancelBtn"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

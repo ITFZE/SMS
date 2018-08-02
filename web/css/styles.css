@@ -1,0 +1,54 @@
+/* Begin - login page styling*/
+.page-backgroundImage {
+	background: url("../images/loginBackground.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.cssTxtColor {
+	color: #FFFFFF !important;
+}
+.css-font-size {
+	font-size: 1.3rem !important;
+	text-align: center !important;
+}
+.css-img-Logo {
+	width: 100px;
+	height: 100px;
+	overflow: auto;
+	display: block;
+	margin: 0 auto;
+}
+.css-Form-bg {
+	margin-top: 5% !important;
+}
+/* End - login page styling*/
+/*Begin - Styling for DashBoard*/
+.css-logo {
+	position: relative !important;
+	margin: auto !important;
+	top: 1px !important;
+}    
+/*End - Styling for DashBoard*/
+.sapMLabel {
+	color: rgb(15, 11, 11);
+	font-size: 0.85rem;
+	font-family: "72-Web", italic, Helvetica, sans-serif;
+	font-weight: normal;
+}
+/* here simple form remove extra space style*/
+div[id*='SimpleFormStudentDatails'] div h5 {   
+    display: none !important;
+}
+div[id*='SimpleFormOtherDetails'] div h5 {   
+    display: none !important;
+}
+div[id*='SimpleFormSearchStudentList'] div h5 {   
+    display: none !important;
+}
+.width-full {
+	width: 100% !important;
+}
+.bg-color-table {
+	background-color: #eff4f9;
+}

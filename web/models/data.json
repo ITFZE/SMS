@@ -1,0 +1,287 @@
+{
+	"sideNavigation": [{
+			"title": "Home",
+			"icon": "sap-icon://home",
+			"expanded": false,
+			"key": "DashBoard"
+
+    	}, {
+			"title": "School Management",
+			"icon": "sap-icon://education",
+			"expanded": false,
+			"key": "DashBoard",
+			"items": [{
+				"title": "Class Master",
+				"key": "ClassMaster"
+		}, {
+				"title": "Academic Year Master",
+				"key": "AcademicYearMaster"
+		}, {
+				"title": "Student Master",
+				"key": "StudentMaster"
+		}, {
+				"title": "Discount Master",
+				"key": "DiscountMaster"
+		}, {
+				"title": "Area Master",
+				"key": "AreaMaster"
+		}, {
+				"title": "Street Master",
+				"key": "StreetMaster"
+		}]
+    	}, {
+			"title": "Bus Transport Management System",
+			"icon": "sap-icon://bus-public-transport",
+			"expanded": false,
+			"key": "DashBoard",
+			"items": [{
+				"title": "Bus Master",
+				"key": "BusMaster"
+		}, {
+				"title": "Route Master",
+				"key": "RouteMaster"
+		}, {
+				"title": "Assign Student Route",
+				"key": "AssignStudentRoute"
+		}, {
+				"title": "Assign Bus Route",
+				"key": "AssignBusRoute"
+		}, {
+				"title": "Allocate Student Bus",
+				"key": "AllocateStudentBus"
+		}]
+	},
+		{
+			"title": "User Profile",
+			"icon": "sap-icon://employee-lookup",
+			"expanded": false,
+			"key": "DashBoard",
+			"items": [{
+				"title": "User Profile",
+				"key": "UserProfile"
+		}]
+	}
+	],
+
+	"classMasterData": [
+		{
+			"code": 0,
+			"classCode": "1",
+			"className": "KG1",
+			"descrpitionArbic": "الروضة الأولى"
+     }, {
+			"code": 1,
+			"classCode": "2",
+			"className": "KG2",
+			"descrpitionArbic": "الروضة الأولى"
+     }, {
+			"code": 2,
+			"classCode": "3",
+			"className": "1 GRADE ONE",
+			"descrpitionArbic": "الروضة الأولى"
+    }],
+    "UserProfileDetails": [
+        {
+            "code": 0,
+            "UserCode": "Luka Modric",
+            "UserFullName": "Jerry",
+            "UserShortName": "Sylvion",
+            "Email": "sylvion@gmail.com"
+        },
+        {
+            "code": 1,
+            "UserCode": "Ivan Perisic",
+            "UserFullName": "Antione",
+            "UserShortName": "GriezMann",
+             "Email": "GriezMann@gmail.com"
+        }
+        ],
+	"academicYearMaster": [
+		{
+			"year": "2017",
+			"startDate": "20/05/2018",
+			"endDate": "10/05/2018",
+			"status": "Active"
+        }],
+	"studentMasterData": [
+		{
+			"code": 0,
+			"stdunetCode": 80801001,
+			"studentName": "IMAD ABDELOUADOUD GUELMAOUI",
+			"studentNameArabic": "عماد عبدالودود قلماوي"
+        }, {
+			"code": 1,
+			"stdunetCode": 80801002,
+			"studentName": "BASIL OSAMA YOUNIS RADWAN",
+			"studentNameArabic": "باسل أسامة يونس رضواند قلماوي"
+    	}, {
+			"code": 2,
+			"stdunetCode": 80801003,
+			"studentName": "YUSEFEBRAHEM AL NASHAABADI",
+			"studentNameArabic": "باسل أسامة يونس رضواند قلماوي"
+         }],
+	"DiscountMasterDetails": [
+		{
+			"code": 0,
+			"Code": 12,
+			"Description": "Discount - 2nd  Brother/Sister (Tution Fee)",
+			"Description Arabic": " الأخت الثانية - رسوم تعليمية/خصم – الأخ  الثاني  ",
+			"Discount Percentage": "10",
+			"Discount Limit Amount": "0.00",
+			"Class Code": "0"
+        },
+		{
+			"code": 1,
+			"Code": 13,
+			"Description": "Discount - 3rd  Brother/Sister (Tution Fee)",
+			"Description Arabic": " الأخت الثانية - رسوم تعليمية/خصم – الأخ  الثاني  ",
+			"DiscountPercentage": "10",
+			"Discount Limit Amount": "0.00",
+			"Class Code": "0"
+        },
+		{
+			"code": 2,
+			"Code": 14,
+			"Description": "Discount - 4th Brother/Sister (Tution Fee)",
+			"Description Arabic": " الأخت الثانية - رسوم تعليمية/خصم – الأخ  الثاني  ",
+			"DiscountPercentage": "0",
+			"Discount Limit Amount": "0.00",
+			"Class Code": "0"
+        }],
+
+	"AllocateStudentBusDetails": [
+		{
+			"code": 0,
+			"Year": "2017",
+			"VehicleType": "Buygati Veyron",
+			"NoOfSeats": "1",
+			"Route": "المرور من المشرف الى جا",
+			"Driver": "4 Wheeler",
+			"DriverName": "Loraine",
+			"Supervisor": "George Clooney",
+			"SupervisorName": "Sylvion"
+        },
+		{
+			"code": 1,
+			"Year": "2018",
+			"VehicleType": "Veyron",
+			"NoOfSeats": "2",
+			"Route": "شارع حمدان من السلام ",
+			"Driver": "2 Wheeler",
+			"DriverName": "Lloyd",
+			"Supervisor": "Dicapriold",
+			"SupervisorName": "Sheldonice"
+        }],
+	"RouteMasterDetails": [
+		{
+			"code": 0,
+			"RouteCode": "1",
+			"RouteName": "المرور من المشرف الى جامعة خليفة"
+        },
+		{
+			"code": 1,
+			"RouteCode": "2",
+			"RouteName": "شارع حمدان من السلام الى ليوا"
+        },
+		{
+			"code": 2,
+			"RouteCode": "3",
+			"RouteName": "النادى السياحى- بوابة البحرية – جزيرة الريم"
+        }],
+
+	"areaMaster": [
+		{
+			"areaCode": "2017",
+			"areaDescription": "ABU DHABI",
+			"areaDescription(Arabic)": "أبوظبي"
+		}],
+	"streetMasterData": [
+		{
+			"code": 0,
+			"streetCode": 1,
+			"streetDescr": "SHAWAMEKH",
+			"streetDescrArabic": "المفرق"
+		    },
+		{
+			"code": 1,
+			"streetCode": 2,
+			"streetDescr": "BAHYA",
+			"streetDescrArabic": "الشهامة القديمة"
+		    },
+		{
+			"code": 2,
+			"streetCode": 3,
+			"streetDescr": "RAHBAH",
+			"streetDescrArabic": "الرحبة"
+	 }],
+
+	"classMasterFilterData": [{
+		"value": "Class Name"
+    }, {
+		"value": "Class Code"
+    }],
+    
+	"academicMasterFilterData": [{
+		"value": "Year"
+    }, {
+		"value": "Star Date"
+    }, {
+		"value": "End Date"
+    }],
+	"DiscountMasterFilterData": [{
+		"value": "Code"
+    }, {
+		"value": "Description"
+    }],
+	"areaMasterFilterData": [{
+		"value": "Area Code"
+    }, {
+		"value": "Description"
+    }],
+	"streetMasterFilterData": [
+		{
+			"value": "Street Code"
+	}, {
+			"value": "Street Description"
+    }, {
+			"value": "Street Description Arabic"
+	}],
+	"busMasterFilterData": [{
+		"value": "Bus No"
+    }, {
+		"value": "Bus Type"
+    }],
+	"stduentMasterFilterData": [
+		{
+			"value": "Student Name"
+	}, {
+			"value": "Student Code"
+	}, {
+			"value": "Student Name Arabic"
+	}],
+
+	"RouteMasterFilterData": [
+		{
+			"value": "RouteCode"
+    }, {
+			"value": "RouteName"
+    }],
+    
+	"seasonState": [{
+		"selectTxt": "Active",
+		"keyStatus": "1"
+	}, {
+		"selectTxt": "Inactive",
+		"keyStatus": "2"
+	}],
+	"year": [{
+	    "selectItem": "Select Year",
+	    "key": -1
+	},{
+	    "selectItem": "2018",
+	    "key": 1
+	},{
+	    "selectItem": "2019",
+	    "key": 2
+	}]
+}

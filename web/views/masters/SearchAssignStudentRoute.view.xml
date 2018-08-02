@@ -1,0 +1,74 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.masters.SearchAssignStudentRoute"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page title="{i18n>SearchAssignStudentRoute}" showNavButton="true" navButtonPress="onNavBackAssign">
+		<content>
+			<f:SimpleForm id="SimpleFormSearchStudentList" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+			    singleContainerFullSize="true">
+				<f:content>
+					<core:Title/>
+					<Label text="{i18n>stdmStudentName}" class="sapUiTinyMarginTop"/>
+					<Input class="sapUiTinyMarginTop" id="txtInStdName" placeholder="{i18n>stdmPleaseEnterStdName}"/>
+					<core:Title/>
+					<Label text="{i18n>stdmStudentCode}" class="sapUiTinyMarginTop"/>
+					<Input id="numInStdCode" class="sapUiTinyMarginTop"  placeholder="{i18n>stdmPleaseCode}"/>
+				</f:content>
+			</f:SimpleForm>
+			<FlexBox >
+				<items>
+					<Label text="" class="sapUiSmallMarginEnd">
+						<layoutData>
+							<FlexItemData growFactor="3" />
+						</layoutData>
+					</Label>
+					<Button text="{i18n>stdmSearch}" lass="sapUiTinyMarginTop " press="onPressStudentSearch">
+						<layoutData>
+							<FlexItemData growFactor="2" />
+						</layoutData>
+					</Button>
+				</items>
+			</FlexBox>
+		</content>
+		<Panel visible="false" id="panelStudentSeacrh" width="auto">
+			<Table id="stdSearchTable" class="width-full bg-color-table" 
+				growing="true" growingThreshold="10" inset="false" 
+				selectionMode="single">
+				<headerToolbar>
+					<Toolbar>
+						<content>
+							<Title id="txtMember" text="{i18n>stdmStudentDetail}" />
+						</content>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column  >
+						<Text text="{i18n>stdmStudentCode}"/>
+					</Column>
+					<Column  >
+						<Text text="{i18n>stdmStudentName}"/>
+					</Column>
+					<Column  minScreenWidth="Tablet" demandPopin="true">
+						<Text text="{i18n>StudentName(Arabic)}"/>
+					</Column>
+					<Column  minScreenWidth="Tablet" demandPopin="true" hAlign="End"></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="76787"/>
+							<Text text="Gopi A"/>
+							<Text text="عماد عبدالودود قلماوي"/>
+							<Button text="Assign Student Route" press="onPressAssignStudentRoute"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</Panel>
+	</Page>
+</mvc:View>

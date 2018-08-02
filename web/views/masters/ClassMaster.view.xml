@@ -1,0 +1,33 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.masters.ClassMaster"
+	xmlns:html="http://www.w3.org/1999/xhtml" height="100%">
+	<Page title="{i18n>cmClassMaster}" showNavButton="true" navButtonPress="onBackDashBoard">
+		<subHeader>
+			<Toolbar>
+				<SearchField id="searchClsMaster" placeholder="{i18n>cmPleaseEnterClassName}"
+					search="" />
+			</Toolbar>
+		</subHeader>
+		<content>
+			<List id="listClassMaster" items="{/classMasterData}" growing="true" growingThreshold="10" busyIndicatorDelay="250"
+				enableBusyIndicator="true" noDataText="{i18n>cmNoItems}">
+				<items>
+					<ObjectListItem title="{i18n>cmClassName}: {className}" type="Active" press="onPressClassMasterList" >
+						<attributes>
+							<ObjectAttribute text="{i18n>cmClassCode}: {classCode}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<OverflowToolbarButton tooltip="Filter" icon="sap-icon://add-filter" press="onPressClassFilterOpen"/>
+			</Toolbar>
+		</footer>
+	</Page>
+</mvc:View>

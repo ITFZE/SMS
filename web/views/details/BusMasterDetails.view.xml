@@ -1,0 +1,55 @@
+<mvc:View
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	controllerName="com.app.sms.controllers.details.BusMasterDetails"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<Page title="{i18n>bmBusMasterDetails}">
+		<content>
+			<f:SimpleForm id="SimpleFormTeamsAdd" editable="true" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="4"
+				labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="2" columnsM="2"
+			    singleContainerFullSize="true">
+				<f:content>
+					<core:Title/>
+					<Label text="{i18n>bmBusNo}"/>
+					<Input id="noBusNO" type="Number" valueStateText="{i18n>bmPleaseenterbusno}" placeholder="{i18n>bmPleaseEnterTheBusNo}"/>
+					<Label text="{i18n>bmBusType}" class="sapUiTinyMarginTop"/>
+					<ComboBox id="rdBusType" class="sapUiTinyMarginTop" value="Select Bus Type"  placeholder="{i18n>bmPleaseEnterTheBusType}" valueStateText="{i18n>bmPleaseenterthebustype}"/>
+					<Label text="{i18n>bmIMEINo}" class="sapUiTinyMarginTop"/>
+					<Input id="noIMEINo" type="Number" class="sapUiTinyMarginTop" placeholder="{i18n>bmPleaseEnterTheIMEINo}" valueStateText="{i18n>bmValuePleaseenterIMEINo}"/>
+					<Label text="{i18n>bmVehType}" class="sapUiTinyMarginTop"/>
+					<ComboBox  id="typeVeh" class="sapUiTinyMarginTop" value="Select Vehi Type" placeholder="{i18n>bmPleaseEnterTheVehType}" valueStateText="{i18n>bmPleaseenterthevehtype}"/>
+					<Label text="{i18n>bmEngineNo}" class="sapUiTinyMarginTop"/>
+					<Input id="noEngine" class="sapUiTinyMarginTop" placeholder="{i18n>bmPleaseEnterTheVehType}" valueStateText="{i18n>bmPleaseenterthevehtype}"/>
+					<Label text="{i18n>bmChassisNo}" class="sapUiTinyMarginTop"/>
+					<Input id="noChassis" class="sapUiTinyMarginTop" placeholder="{i18n>bmPleaseEnterTheChassisNo}" valueStateText="{i18n>bmPleaseenterthechassisno}"/>
+					<Label text="{i18n>bmRegNo}" class="sapUiTinyMarginTop"/>
+					<Input id="noRegNo" class="sapUiTinyMarginTop" placeholder="{i18n>bmPleaseEnterTheRegNo}" valueStateText="{i18n>bmPleaseentertheregno}"/>
+					<core:Title/>
+					<Label text="{i18n>bmRegDate}"/>
+					<DatePicker id="noRegDate" valueFormat="MM/dd/yy" displayFormat="short" placeholder="{i18n>bmPleaseEnterTheRegDate}" valueStateText="{i18n>bmPleaseentertheregdate}"/>
+					<Label text="{i18n>bmRegExpDate}" class="sapUiTinyMarginTop"/>
+					<DatePicker id="noRegExpDate" class="sapUiTinyMarginTop" valueFormat="MM/dd/yy" displayFormat="short" placeholder="{i18n>bmPleaseEnterTheRegExpDate}" valueStateText="{i18n>bmPleaseentertheregexpdate}"/>
+					<Label text="{i18n>bmINSCompName}" class="sapUiTinyMarginTop"/>
+					<Input id="stINSCompName" class="sapUiTinyMarginTop" placeholder="{i18n>bmPleaseEnterTheINSCompName}" valueStateText="{i18n>bmPleaseentertheINScompname}"/>
+					<Label text="{i18n>bmINSPolicyNo}" class="sapUiTinyMarginTop"/>
+					<Input id="noINSPolicy" class="sapUiTinyMarginTop" placeholder="{i18n>bmPleaseEnterTheINSPolicyNo}" valueStateText="{i18n>bmPleaseentertheINSpolicyno}"/>
+					<Label text="{i18n>bmINSExpDate}" class="sapUiTinyMarginTop"/>
+					<Input id="dateINSExp" class="sapUiTinyMarginTop" placeholder="{i18n>bmPleaseEnterTheINSExpDate}" valueStateText="{i18n>bmPleaseentertheINSexpdate}"/>
+					<Label text="{i18n>bmNoOfSeats}" class="sapUiTinyMarginTop"/>
+					<Input id="noSeats" type="Number" class="sapUiTinyMarginTop" placeholder="{i18n>bmPleaseEnterTheNoOfSeats}" valueStateText="{i18n>bmPleaseenterthenoofseats}"/>
+				</f:content>
+			</f:SimpleForm>
+		</content>
+		<footer>
+			<Bar>
+				<contentRight>
+					<Button icon="sap-icon://save" press="onPressBusMasterSave"/>
+					<Button tooltip="Cancel" icon="sap-icon://sys-cancel-2" press="onPressBusMasterCancel"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>
